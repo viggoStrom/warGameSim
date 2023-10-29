@@ -26,6 +26,9 @@ h1 {
     height: 90vh;
     aspect-ratio: 16/9;
     background-color: white;
+    background-image: url(../assets/textures/tejasvi-ganjoo-f1p5tnQjPdM-unsplash.jpg);
+    background-position: center;
+    background-size: 100%;
 }
 
 #performance {
