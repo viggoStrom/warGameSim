@@ -1,0 +1,46 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    background-color: #343434;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-y: hidden;
+}
+
+h1 {
+    margin: .5rem;
+    opacity: .1;
+}
+
+#playingField {
+    height: 90vh;
+    aspect-ratio: 16/9;
+    background-color: white;
+}
+
+#performance {
+    position: absolute;
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: repeat(13, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: space-evenly;
+    width: 100vw;
+    color: gray;
+    text-align: center;
+    margin-top: 1vh;
+}
+
+#performance p {
+    margin: 0;
+}
