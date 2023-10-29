@@ -7,25 +7,45 @@ canvas.addEventListener("contextmenu", (event) => {
     event.preventDefault()
 })
 
-const updateQueue: BaseSoldier[] = []
+const updateQueue: Object[] = []
+const entities: Object[] = []
 
-const soldier = new BaseSoldier(300, 200)
-soldier.drawBody()
+const greenSoldier = new BaseSoldier(700, 400, "team1")
+const redSoldier = new BaseSoldier(1000, 500, "team2")
+redSoldier.color = "rgb(200,20,0)"
 
 canvas.addEventListener("mousedown", (event): void => {
     const click = {
         x: canvas.width * event.offsetX / canvas.clientWidth,
         y: canvas.height * event.offsetY / canvas.clientHeight
     }
+    redSoldier.target = click
 })
 
 const masterUpdate = (): void => {
-    Object.keys(updateQueue).forEach((key: string) => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
 
+    updateQueue.forEach((element: any) => {
+        element.update() // Movement and stuff
+    });
 
-        updateQueue[key].forEach((update: CallableFunction) => {
-            update()
-        });
+    updateQueue.forEach((element: any) => {
+        element.drawZ0() // Statics
+    });
+    updateQueue.forEach((element: any) => {
+        element.drawZ1() // Particles and effects
+    });
+    updateQueue.forEach((element: any) => {
+        element.drawZ2() // Entities
+    });
+    updateQueue.forEach((element: any) => {
+        element.drawZ3() // Projectiles
+    });
+    updateQueue.forEach((element: any) => {
+        element.drawZ4() // Lower UI
+    });
+    updateQueue.forEach((element: any) => {
+        element.drawZ5() // UI
     });
 }
 
