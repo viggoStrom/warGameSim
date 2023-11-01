@@ -175,11 +175,11 @@ class BaseSoldier {
         }
         this.moveToTarget()
 
-        if (Math.random() > .98 && this.idle) {
-            this.idle = false
-            this.search()
-        }
+        // if (Math.random() > .98 && this.idle) {
+        //     this.idle = false
+        //     this.search()
+        // }
 
-        this.attack()
+        // this.attack()
     }
 }

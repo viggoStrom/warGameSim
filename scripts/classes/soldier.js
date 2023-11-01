@@ -144,11 +144,11 @@ var BaseSoldier = /** @class */ (function () {
             entities.splice(entities.indexOf(this), 1);
         }
         this.moveToTarget();
-        if (Math.random() > .98 && this.idle) {
-            this.idle = false;
-            this.search();
-        }
-        this.attack();
+        // if (Math.random() > .98 && this.idle) {
+        //     this.idle = false
+        //     this.search()
+        // }
+        // this.attack()
     };
     return BaseSoldier;
 }());
